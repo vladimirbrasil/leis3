@@ -6,18 +6,28 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg', '0.12.2'
-# gem 'haml', '~>3.1.7'
-# gem 'haml-rails'
 gem 'hirb'
-
-group :development, :test do
-  gem 'rspec-rails', '~> 2.11.4'
-  gem 'guard-rspec', '0.5.5'
-end
-
 gem 'annotate', '>=2.5.0', group: :development
 
+# gem 'haml', '~>3.1.7'
+# gem 'haml-rails'
 
+group :development, :test do
+	gem "rspec-rails", ">= 2.0.0"
+  gem 'cucumber-rails', '>= 0.3.2', :require => false
+  gem 'capybara', '>= 1.1.2'
+  # gem 'webrat', '>= 0.7.2' 
+  # migrating from webrat to capybara:
+  # http://zadasnotes.blogspot.com.br/2011/08/migrating-from-webrat-to-capybara.html
+  gem 'guard-rspec', '0.5.5'
+  gem 'guard-cucumber'
+  gem 'guard-spork'
+  gem 'spork'
+  gem 'rb-inotify', '0.8.8'
+  gem 'libnotify', '0.5.9'
+  gem 'factory_girl_rails', '1.4.0'
+  gem 'database_cleaner', '>= 0.7.0'  
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -47,15 +57,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-
-
-group :test do
-  gem 'capybara', '1.1.2'
-  gem 'rb-inotify', '0.8.8'
-  gem 'libnotify', '0.5.9'
-  gem 'guard-spork', '0.3.2'
-  gem 'spork', '0.9.0' 
-  gem 'factory_girl_rails', '1.4.0'
-  gem 'cucumber-rails', '1.2.1', require: false
-  gem 'database_cleaner', '0.7.0'  
-end
